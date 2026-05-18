@@ -1,0 +1,69 @@
+-- Show databases
+SHOW DATABASES;
+
+-- Create database
+CREATE DATABASE vitcampus;
+
+-- Select database
+USE vitcampus;
+
+-- Create table
+CREATE TABLE cse(
+    sid INT,
+    sname VARCHAR(50),
+    smarks INT,
+    sdept VARCHAR(20),
+    scountry VARCHAR(30)
+);
+
+-- Show tables
+SHOW TABLES;
+
+-- Describe table
+DESC cse;
+
+-- Insert records
+INSERT INTO cse VALUES
+(101,'Rahul',90,'CSE','India'),
+(102,'Aman',85,'ECE','India'),
+(103,'Riya',95,'MECH','Nepal'),
+(104,'Karan',88,'CSE','USA'),
+(105,'Priya',92,'IT','Canada');
+
+-- Display records
+SELECT * FROM cse;
+
+-- Add columns
+ALTER TABLE cse
+ADD(
+    sphn BIGINT,
+    sphn2 BIGINT
+);
+
+-- Check structure
+DESC cse;
+
+-- Insert new row
+INSERT INTO cse VALUES
+(106,'Semi',95,'CSE','SriLanka',9876543210,9876543211);
+
+-- Display table
+SELECT * FROM cse;
+
+-- Drop column
+ALTER TABLE cse
+DROP COLUMN sphn2;
+
+-- Add column with default value
+ALTER TABLE cse
+ADD sCountry VARCHAR(30) DEFAULT 'INDIA';
+
+-- Rename column
+ALTER TABLE cse
+RENAME COLUMN sCountry TO sLocation;
+
+-- Final structure
+DESC cse;
+
+-- Final data
+SELECT * FROM cse;
